@@ -1,0 +1,62 @@
+<html>
+
+<head></head>
+
+<body>
+  <script>
+    /* Aufgabe:
+     * Nimm den unten aufgeführten Array von Objekten und Berechne die Summe und den Durchschnitt des Alters der Kunden.
+     * Der Altersdurchschnitt soll einmal global und 1x pro Geschlecht ausgegeben werden.
+     * Überleg dir zuerst Schritt für Schritt, was du alles machen musst, um zum Ziel zu kommen und was du dafür benötigst.
+
+     * Erwartete Ausgabe auf der Konsole:
+      Summe des Alters aller Kunden: 159 Jahre
+      Durchschnittsalter der Kunden: 31.8 Jahre
+      Durchschnittsalter der Frauen: 39 Jahre
+      Durchschnittsalter der Männer: 27 Jahre
+     */
+
+    var kunden = [
+      { firstname: "Hans", lastname: "Meier", phoneNumber: "0711234567", age: 35, sex: "m" },
+      { firstname: "Janine", lastname: "Müller", phoneNumber: "0711234566", age: 55, sex: "f" },
+      { firstname: "Andrea", lastname: "Frei", phoneNumber: "0711234568", age: 23, sex: "f" },
+      { firstname: "Timo", lastname: "Fritsche", phoneNumber: "0711234569", age: 19, sex: "m" },
+      { firstname: "Bart", lastname: "Bellon", phoneNumber: "0711234523", age: 27, sex: "m" },
+    ];
+
+    let sumAll = 0;
+    let avgAll = 0;
+    let sumFemale = 0;
+    let amountFemale = 0;
+    let avgFemale = 0;
+    let sumMale = 0;
+    let amountMale = 0;
+    let avgMale = 0;
+
+    for (let x in kunden) {
+      let person = kunden[x];
+
+      //sum of ages:
+      sumAll = kunden.reduce((a, b) => a + b.age, 0);
+
+      //avg of ages
+      avgAll = sumAll / kunden.length;
+
+      //genderAvg of ages:
+      if (person.sex === 'f') {
+        sumFemale += person.age;
+        amountFemale++;
+      } else {
+        sumMale += person.age;
+        amountMale++;
+      }
+    }
+    console.log(sumAll);
+    console.log(avgAll);
+    console.log(sumFemale / amountFemale);
+    console.log(sumMale / amountMale);
+
+  </script>
+</body>
+
+</html>
