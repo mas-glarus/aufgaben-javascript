@@ -1,25 +1,51 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
-  <body>
-    <script>
-      /* Aufgabe:
-       * a) Filtere das simpsonsObj so, dass 2 Arrays entstehen, eines welches alle Weiblichen und eines mit allen Männlichen Simpsons
-       * b) Filtere das simpsonsObj so, ein Array mit allen volljährigen Simpsons entsteht
-      */
 
-       var simpsonsObj = [
-         {name: "Bart", age: 10, sex: 'm'},
-         {name: "Homer", age: 36, sex: 'm'},
-         {name: "Lisa", age: 8, sex: 'w'},
-         {name: "Marge", age: 34, sex: 'w'},
-         {name: "Maggie", age: 1, sex: 'w'},
-         {name: "Hugo", age: 10, sex: 'm'},
-       ];
+<head>
+  <meta charset="UTF-8">
+</head>
 
-    </script>
-  </body>
+<body>
+  <script>
+    /* Aufgabe:
+     * a) Filtere das simpsonsObj so, dass 2 Arrays entstehen, eines welches alle Weiblichen und eines mit allen Männlichen Simpsons
+     * b) Filtere das simpsonsObj so, ein Array mit allen volljährigen Simpsons entsteht
+    */
+
+    var simpsonsObj = [
+      { name: "Bart", age: 10, sex: 'm' },
+      { name: "Homer", age: 36, sex: 'm' },
+      { name: "Lisa", age: 8, sex: 'w' },
+      { name: "Marge", age: 34, sex: 'w' },
+      { name: "Maggie", age: 1, sex: 'w' },
+      { name: "Hugo", age: 10, sex: 'm' },
+    ];
+    //a): 
+    let arrMale = [];
+    let arrFemale = [];
+
+    for (x in simpsonsObj) {
+      let simpson = simpsonsObj[x];
+      if (simpson.sex === 'm') {
+        arrMale.push(simpson);
+      } else {
+        arrFemale.push(simpson);
+      }
+    }
+    console.log(arrMale);
+    console.log(arrFemale);
+
+    //b):
+    let eighteen = [];
+
+    for (x in simpsonsObj) {
+      let simpson = simpsonsObj[x];
+      if (simpson.age >= 18) {
+        eighteen.push(simpson);
+      }
+    }
+    console.log(eighteen);
+
+  </script>
+</body>
+
 </html>
-
-
