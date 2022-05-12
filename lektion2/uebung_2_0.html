@@ -1,19 +1,36 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
-  <body>
-    <script>
-      /* Aufgabe:
-       * Bau eine Funktion, genannt durchschnitt() welche beliebig viele Parameter hat
-       * und dir durchschnitt aller übergebenen Zahlen zurückgibt
-         Um es zu testen, gib den Rückgabewert wie unten angezeigt auf der Konsole aus.
-       * Beispiel: console.log(durchschnitt(1, 2, 3, 4)) => 2.5
-       * Beispiel: console.log(durchschnitt(1, 2, 3, 4, 8, 9, 10, 11)) => 6
-       */
 
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <script>
+    /* Aufgabe:
+     * Bau eine Funktion, genannt durchschnitt() welche beliebig viele Parameter hat
+     * und dir durchschnitt aller übergebenen Zahlen zurückgibt
+       Um es zu testen, gib den Rückgabewert wie unten angezeigt auf der Konsole aus.
+     * Beispiel: console.log(durchschnitt(1, 2, 3, 4)) => 2.5
+     * Beispiel: console.log(durchschnitt(1, 2, 3, 4, 8, 9, 10, 11)) => 6
+     */
+    let arr1 = [1, 2, 3, 4];
+    let avg1 = arrayAverage(arr1);
+
+    let arr2 = [1, 2, 3, 4, 8, 9, 10, 11];
+    let avg2 = arrayAverage(arr2);
+
+
+    function arrayAverage(arr) {
+      let sum = 0;
+      for (let i in arr) {
+        sum += arr[i];
+      }
+      let numbers = arr.length;
+      return (sum / numbers)
+    }
+    console.log(avg1);
+    console.log(avg2);
+  </script>
+</body>
+
 </html>
-
-
